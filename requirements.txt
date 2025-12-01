@@ -1,0 +1,21 @@
+# Data Manipulation
+pandas
+numpy
+
+# Machine Learning
+scikit-learn
+
+# MLOps & Tracking
+dvc             # Data Version Control
+mlflow          # Experiment Tracking
+dagshub         # (Optional) Connects DVC & MLflow to a free remote repo
+
+# API & Deployment
+fastapi
+uvicorn         # Server to run FastAPI
+pydantic        # Data validation
+
+# Utilities & Testing
+pyyaml          # To read params.yaml
+pytest          # For unit tests
+joblib          # For saving/loading models locally
