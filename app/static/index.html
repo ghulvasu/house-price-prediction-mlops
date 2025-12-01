@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DreamHome AI | Price Predictor</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <h1>🏡 DreamHome AI</h1>
+            <p>Instant Real Estate Valuation System</p>
+        </header>
+
+        <!-- Main Form -->
+        <main class="card">
+            <form id="prediction-form">
+                <div class="grid-container">
+                    
+                    <!-- Feature 1 -->
+                    <div class="input-group">
+                        <label>Square Feet</label>
+                        <input type="number" id="sqft" value="1500" min="500" max="10000" required>
+                    </div>
+
+                    <!-- Feature 2 -->
+                    <div class="input-group">
+                        <label>Bedrooms</label>
+                        <select id="bedrooms">
+                            <option value="1">1 BHK</option>
+                            <option value="2">2 BHK</option>
+                            <option value="3" selected>3 BHK</option>
+                            <option value="4">4 BHK</option>
+                            <option value="5">5 BHK</option>
+                        </select>
+                    </div>
+
+                    <!-- Feature 3 -->
+                    <div class="input-group">
+                        <label>Bathrooms</label>
+                        <select id="bathrooms">
+                            <option value="1">1 Bath</option>
+                            <option value="2" selected>2 Baths</option>
+                            <option value="3">3 Baths</option>
+                            <option value="4">4 Baths</option>
+                        </select>
+                    </div>
+
+                    <!-- Feature 4 -->
+                    <div class="input-group">
+                        <label>Year Built</label>
+                        <input type="number" id="year" value="2015" min="1950" max="2024">
+                    </div>
+
+                    <!-- Feature 5 -->
+                    <div class="input-group">
+                        <label>Location Score (1-10)</label>
+                        <input type="range" id="loc_score" min="1" max="10" value="7" oninput="this.nextElementSibling.value = this.value">
+                        <output>7</output>
+                    </div>
+
+                    <!-- Feature 6 -->
+                    <div class="input-group">
+                        <label>Distance to City (km)</label>
+                        <input type="number" id="distance" value="12.5" step="0.1">
+                    </div>
+
+                </div>
+
+                <button type="submit" id="btn-predict">✨ Predict Value</button>
+            </form>
+
+            <!-- Result Section -->
+            <div id="result" class="result-box hidden">
+                <span class="label">Estimated Market Value</span>
+                <h2 id="price-display">₹ 0.00</h2>
+            </div>
+        </main>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
